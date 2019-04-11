@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Scheherazade');
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 20px;
+  text-align: center;
+  /*background: white; */
+  background: #000000 url(https://martingarrix.com/img/book-artwork2.jpg) 50% 50% no-repeat;
+}
+
+.header h1 {
+  font-size: 80px;
+  font-family: 'Francois One', sans-serif;
+  color: white;
+
+}
+.header p {
+    font-family: 'News Cycle', sans-serif;
+    color: white;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  /*background-color: #333;*/
+  background: #000000 url(https://martingarrix.com/img/website-mg-logo-4.png) 50% 50% no-repeat;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+  background: #000000 url(https://djmag.com/sites/default/files/styles/djmag_landscape__691x372_/public/article/image/martin-garrix-2017-live-billboard-1548.jpg?itok=HTGAOgdD) 20% 20% no-repeat;
+ 
+}
+.imgabout {
+  width: 100%;
+  height: 700px;
+  padding: 20px;
+  
+
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 40px;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
