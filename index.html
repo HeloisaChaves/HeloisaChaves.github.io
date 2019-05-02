@@ -1,47 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Fan Page</title>
-    <link rel="stylesheet" href="css/index.css">
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-  </head>
-
-    <body>
-
-    <div class="header">
-    <h1>LIFE=CRAZY</h1>
-    <p>Available now!</p>
+<div class="container">
+  <h2>Form Validation</h2>
+  
+  <p>Insira seu login para entrar.</p>
+  <form action="/action_page.php" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="uname">Usuário:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
     </div>
+    <div class="form-group">
+      <label for="pwd">Senha:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" required> Aceito os termos.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Selecione para continuar.</div>
+      </label>
+    </div>
+    <button href="martinhome.html" type="submit" class="btn btn-primary">Entrar</button>
+  </form>
+</div>
 
-    <div class="topnav">
-    <a href="https://www.bandsintown.com/a/3386497">Tour</a>
-    <a href="https://martingarrix.com/music">Music</a>
-    <a href="https://www.mendo.nl/product/martin-garrix-life-is-crazy">Book</a>
-    <a href="https://martingarrix.com/" style="float:right">Web Site</a>
-    </div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 
-    <div class="row">
-    <div class="leftcolumn">
-        <div class="card">
-        <h2>SOBRE MARTIN GARRIX</h2>
-        <h5>Amstelveen, 14 de maio de 1996</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Quem é?</p>
-        <p>Ele é especialmente conhecido pela canção "Animals", que atingiu o topo de listas musicais em mais de dez países e conta com mais de 3 bilhões de visualizações no YouTube</p>
-        </div>        
-    </div>
-    <div class="rightcolumn">
-        <div class="card">
-        <h2>LIVRO</h2>
-        <div class="imgabout" style="height:200px;">
-            <p>Martin Garrix está lançando seu próprio livro. Chamada LIFE = CRAZY, a obra trará fotos de seu amigo e fotógrafo pessoal, Louis van Baar, para contar a história da carreira do astro. Com cerca de 300 páginas, o livro será publicado pela editora holandesa MENDO. </p>
-        </div>
-        <p>Disponibilizado em 17 de outubro</p>
-        </div>
-            
-    </div>
-    </div>
-
-    </body>
+</body>
 </html>
