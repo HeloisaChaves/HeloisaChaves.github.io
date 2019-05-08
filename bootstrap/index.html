@@ -8,9 +8,49 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script>
+
+  $(document).ready(function() {
+
+    $('#form1').on('submit', function(e) {
+
+      e.preventDefault();
+
+      var api_url = 'https://api.linkpreview.net'
+
+      var key = '5ccb905609abcb15efe6a95ccb9124597a04c597376f5' // real
+
+      $.ajax({
+
+        url: api_url + "?key=" + key + "&q=" + $("#endereco").val(),
+
+        contentType: "application/json",
+
+        dataType: 'json',
+
+        success: function(result) {
+
+          $("#p1").text(result.title);
+
+          $("#p2").text(result.description);
+
+          $('#p3').attr('src', result.image);
+
+          $("#p4").text(result.url);
+
+        }
+      });
+
+    });
+
+  });
+
+</script>
+
   <style>
   .header {
-    
+
     background: #000000 url(https://martingarrix.com/img/book-artwork2.jpg) 50% 50% no-repeat;
   }
 .foto {
@@ -30,7 +70,7 @@
 
 <div class="jumbotron text-center header colortitle" style="margin-bottom:0">
     <h1>LIFE=CRAZY</h1>
-    <p>Available now!</p> 
+    <p>Available now!</p>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -48,10 +88,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://www.mendo.nl/product/martin-garrix-life-is-crazy">Book</a>
-      </li>  
-        
+      </li>
+
     </ul>
-  </div>  
+  </div>
 </nav>
 
 <div class="container" style="margin-top:30px">
@@ -61,7 +101,7 @@
       <h5>Amstelveen, 14 de maio de 1996</h5>
       <div class="foto"></div>
       <p>Ele é especialmente conhecido pela canção "Animals", que atingiu o topo de listas musicais em mais de dez países e conta com mais de 3 bilhões de visualizações no YouTube</p>
-      
+
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
@@ -74,9 +114,48 @@
   </div>
 </div>
 
+</br></br>
+
+
+  <form name="form1" id="form1" style="text-align:center;">
+    URL:
+    <input type="text" id="endereco" name="endereco">
+
+    <br> </br>
+
+    <div class="container">
+
+    <input type="submit" value="ENVIAR" data-toggle="modal" data-target="#myModal2" class="btn btn-primary" >
+
+    <div class="modal fade" id="myModal2" role="dialog">
+       <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title" style="color:black"> </h4>
+           </div>
+           <div class="modal-body">
+               <p id="p1"></p>
+
+             <p id="p2"></p>
+
+             <img id="p3" src="" />
+
+             <p id="p4"></p>
+             </center>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+ </form>
+</br></br>
+
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p>Copyright © 2019 Martin Garrix</p>
 </div>
 
 </body>
 </html>
+
